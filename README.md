@@ -1,130 +1,100 @@
-🧩 Tic Tac Toe – Python Edition
-Un joc clasic de X și 0, implementat în Python. Proiectul este ideal pentru începători care vor să înțeleagă logica unui joc, lucrul cu funcții și structuri de date, dar și pentru cei care vor un mic proiect distractiv în consolă.
+🧩 Tic Tac Toe
+Un joc simplu și clasic de X și 0, implementat pentru a demonstra concepte de programare precum logica de joc, verificarea câștigătorului și interacțiunea cu utilizatorul.
 
 📌 Descriere
-Acest proiect implementează jocul Tic Tac Toe pe o tablă 3×3, unde doi jucători introduc pe rând pozițiile dorite. Programul verifică automat câștigătorul, remiza și validează mutările.
+Acest proiect reprezintă o implementare a jocului Tic Tac Toe (sau „X și 0”), jucat pe o tablă 3×3. Doi jucători alternează mutările, iar scopul este să formeze o linie de trei simboluri identice — orizontal, vertical sau diagonal.
+
+Proiectul este ideal pentru:
+
+începători care vor să înțeleagă logica unui joc simplu
+
+exersarea structurilor de date
+
+lucrul cu funcții și verificări logice
+
+dezvoltarea unei interfețe simple (CLI sau GUI, în funcție de implementare)
 
 🚀 Funcționalități
-Joc pentru doi jucători (X și O)
-
-Afișarea tablei după fiecare mutare
+Joc pentru doi jucători
 
 Verificarea automată a câștigătorului
 
-Detectarea remizei
+Detectarea situației de remiză
 
-Validarea pozițiilor introduse
+Afișarea tablei după fiecare mutare
 
-Cod simplu, ușor de înțeles și extins
+Validarea mutărilor (nu poți suprascrie o poziție ocupată)
 
 🛠️ Tehnologii folosite
-Python 3.x
+(Completează în funcție de implementarea ta)
+
+Exemple:
+
+Python (CLI)
+
+JavaScript + HTML + CSS (versiune web)
+
+C++ (console)
+
+Java (Swing sau console)
 
 📂 Structura proiectului
-Dacă folosești o versiune simplă:
-
-Code
-tic-tac-toe/
-│── README.md
-└── main.py
-Dacă ai o versiune modularizată:
+Exemplu pentru o versiune Python:
 
 Code
 tic-tac-toe/
 │── README.md
 │── main.py
 │── game.py
-└── board.py
+│── board.py
+└── utils.py
 ▶️ Cum rulezi jocul
+Dacă este o aplicație de consolă:
 Clonează repository-ul:
 
 Code
-git clone https://github.com/user/tic-tac-toe-python.git
+git clone https://github.com/user/tic-tac-toe.git
 Intră în director:
 
 Code
-cd tic-tac-toe-python
+cd tic-tac-toe
 Rulează jocul:
 
 Code
 python main.py
+Dacă este o versiune web:
+Deschide index.html în browser
+sau
+
+Rulează un server local (ex. Live Server)
+
 🎮 Cum se joacă
 Jucătorul 1 este X, jucătorul 2 este O
 
-Fiecare introduce numărul poziției (1–9)
+Fiecare jucător introduce poziția dorită
 
-Programul actualizează tabla
+Tabla se actualizează
 
 Jocul se termină când:
 
 un jucător are trei simboluri consecutive
 
-toate pozițiile sunt ocupate → remiză
+toate pozițiile sunt ocupate (remiză)
 
-🧠 Exemplu de cod (main.py)
-python
-board = [" " for _ in range(9)]
+🏆 Capturi de ecran
+(Adaugă imagini dacă ai)
 
-def print_board():
-    print()
-    for i in range(3):
-        print(f" {board[3*i]} | {board[3*i+1]} | {board[3*i+2]} ")
-        if i < 2:
-            print("---+---+---")
-    print()
-
-def check_winner(player):
-    win_conditions = [
-        [0,1,2], [3,4,5], [6,7,8],  # linii
-        [0,3,6], [1,4,7], [2,5,8],  # coloane
-        [0,4,8], [2,4,6]            # diagonale
-    ]
-    return any(all(board[pos] == player for pos in cond) for cond in win_conditions)
-
-def game():
-    current = "X"
-    moves = 0
-
-    while True:
-        print_board()
-        try:
-            pos = int(input(f"Jucătorul {current}, alege o poziție (1-9): ")) - 1
-        except ValueError:
-            print("Introduce un număr valid.")
-            continue
-
-        if pos < 0 or pos > 8 or board[pos] != " ":
-            print("Mutare invalidă, încearcă din nou.")
-            continue
-
-        board[pos] = current
-        moves += 1
-
-        if check_winner(current):
-            print_board()
-            print(f"🎉 Jucătorul {current} a câștigat!")
-            break
-
-        if moves == 9:
-            print_board()
-            print("🤝 Remiză!")
-            break
-
-        current = "O" if current == "X" else "X"
-
-if __name__ == "__main__":
-    game()
 📌 Îmbunătățiri posibile
-Adăugarea unui AI (algoritmul Minimax)
+Mod de joc împotriva calculatorului (AI – algoritmul Minimax)
 
-Interfață grafică (Tkinter, Pygame)
+Interfață grafică (Tkinter, Pygame, Web etc.)
 
-Modul multiplayer online
+Modul online multiplayer
 
-Salvarea scorurilor
+Animații și efecte vizuale
 
 🤝 Contribuții
-Orice contribuție este binevenită. Poți deschide un issue sau un pull request.
+Contribuțiile sunt binevenite. Deschide un issue sau un pull request dacă ai idei noi.
 
 📜 Licență
-Proiect distribuit sub licența MIT.
+Acest proiect este distribuit sub licența MIT (sau ce licență preferi).
